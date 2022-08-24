@@ -1,0 +1,18 @@
+{% extends 'index.html' %} {% block main_content %}
+<style>
+  .card {
+    border: solid 1px;
+  }
+</style>
+
+<div class="card">
+  {{ b.id}}<br />
+  {{ b.title }}<br />
+  {{ b.author }}<br />
+  {{ b.content }}
+
+  <a href="{% url 'update' b.id %}">update</a>
+  <a href="{% url 'delete' b.id  %}">delete</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'index.html' %} {% block main_content %}
+<style>
+  .card {
+    border: solid 1px;
+  }
+</style>
+
+{% for b in allblogs %}
+<div class="card">
+  {{ b.id}}<br />
+  {{ b.title }}<br />
+  {{ b.author }}<br />
+  {{ b.content }}
+
+  <a href="{% url 'update' b.id %}">update</a>
+  <a href="{% url 'delete' b.id  %}">delete</a>
+  <a href="{% url 'getblog' b.id  %}">view</a>
+</div>
+
+{% empty %}
+<h3>No data</h3>
+
+{% endfor %}
+
+<a href="{% url 'create' %}"> Write</a>
+{% endblock %}

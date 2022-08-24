@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %} Create {% endblock %}
+{% block main_content %}
+
+<div>
+    <form method="POST" action="{% url 'create'  %}">
+        <div>
+            {{ form.as_p }}
+            {% csrf_token  %}
+            <br>
+            <p> <input type="submit">POST</p>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
